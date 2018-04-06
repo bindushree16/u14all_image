@@ -1,0 +1,15 @@
+jobs:
+ - name: u14all-test
+   type: runSh
+   steps:
+     - TASK:
+         runtime:
+           options:
+             imageName: "drydock/u14all"
+             imageTag: master
+         script:
+           - psql --version
+           - java -jar /usr/local/selenium/selenium-server-standalone-3.8.1.jar --version
+           - sqlite3 --version
+           - mysql --version
+
